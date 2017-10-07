@@ -8,15 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		652B13661F88A3FC00D127FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B13651F88A3FC00D127FA /* AppDelegate.swift */; };
-		652B136B1F88A3FC00D127FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652B13691F88A3FC00D127FA /* Main.storyboard */; };
 		652B136E1F88A3FC00D127FA /* calhacks4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 652B136C1F88A3FC00D127FA /* calhacks4.xcdatamodeld */; };
 		652B13701F88A3FC00D127FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652B136F1F88A3FC00D127FA /* Assets.xcassets */; };
 		652B13731F88A3FC00D127FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652B13711F88A3FC00D127FA /* LaunchScreen.storyboard */; };
 		652B137C1F88A66500D127FA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B137B1F88A66500D127FA /* Router.swift */; };
 		652B137E1F88A6A500D127FA /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B137D1F88A6A500D127FA /* Provider.swift */; };
 		652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */; };
-		65BFE59D1F88B2C000711F69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFE59C1F88B2C000711F69 /* ViewController.swift */; };
+		65BFE59D1F88B2C000711F69 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFE59C1F88B2C000711F69 /* FeedViewController.swift */; };
 		B4E0A9406D672E4078B91ED7 /* Pods_calhacks4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */; };
+		D34C91C21F88F7A800C80FC1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C11F88F7A800C80FC1 /* FeedViewModel.swift */; };
+		D34C91C41F88F7C900C80FC1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C31F88F7C900C80FC1 /* Article.swift */; };
+		D34C91C61F88F87F00C80FC1 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C51F88F87F00C80FC1 /* FeedTableViewCell.swift */; };
+		D34C91C81F88F97500C80FC1 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C71F88F97500C80FC1 /* Constants.swift */; };
+		D34C91CA1F88FC4000C80FC1 /* UITableView+CellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C91F88FC4000C80FC1 /* UITableView+CellHelpers.swift */; };
+		D3C391EF1F8905AF00CA26CA /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,7 +29,6 @@
 		45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_calhacks4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B13621F88A3FB00D127FA /* calhacks4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calhacks4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B13651F88A3FC00D127FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		652B136A1F88A3FC00D127FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		652B136D1F88A3FC00D127FA /* calhacks4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = calhacks4.xcdatamodel; sourceTree = "<group>"; };
 		652B136F1F88A3FC00D127FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		652B13721F88A3FC00D127FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -32,8 +36,14 @@
 		652B137B1F88A66500D127FA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		652B137D1F88A6A500D127FA /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundImage.swift"; sourceTree = "<group>"; };
-		65BFE59C1F88B2C000711F69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		65BFE59C1F88B2C000711F69 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		D2F1547557832C30C7B2875D /* Pods-calhacks4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calhacks4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4.debug.xcconfig"; sourceTree = "<group>"; };
+		D34C91C11F88F7A800C80FC1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		D34C91C31F88F7C900C80FC1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Article.swift; path = calhacks4/Controllers/Article.swift; sourceTree = SOURCE_ROOT; };
+		D34C91C51F88F87F00C80FC1 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedTableViewCell.swift; path = calhacks4/Controllers/FeedTableViewCell.swift; sourceTree = SOURCE_ROOT; };
+		D34C91C71F88F97500C80FC1 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D34C91C91F88FC4000C80FC1 /* UITableView+CellHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+CellHelpers.swift"; path = "calhacks4/UITableView+CellHelpers.swift"; sourceTree = SOURCE_ROOT; };
+		D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,11 +95,11 @@
 				652B13801F88A83B00D127FA /* Utilities */,
 				652B137A1F88A65200D127FA /* Networking */,
 				652B13651F88A3FC00D127FA /* AppDelegate.swift */,
-				652B13691F88A3FC00D127FA /* Main.storyboard */,
 				652B136F1F88A3FC00D127FA /* Assets.xcassets */,
 				652B13711F88A3FC00D127FA /* LaunchScreen.storyboard */,
 				652B13741F88A3FC00D127FA /* Info.plist */,
 				652B136C1F88A3FC00D127FA /* calhacks4.xcdatamodeld */,
+				D34C91C71F88F97500C80FC1 /* Constants.swift */,
 			);
 			path = calhacks4;
 			sourceTree = "<group>";
@@ -114,6 +124,7 @@
 		652B13801F88A83B00D127FA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				D34C91C91F88FC4000C80FC1 /* UITableView+CellHelpers.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -121,7 +132,9 @@
 		65BFE5981F88B2AF00711F69 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				65BFE59C1F88B2C000711F69 /* ViewController.swift */,
+				65BFE59C1F88B2C000711F69 /* FeedViewController.swift */,
+				D34C91C11F88F7A800C80FC1 /* FeedViewModel.swift */,
+				D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -129,6 +142,7 @@
 		65BFE5991F88B2AF00711F69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D34C91C31F88F7C900C80FC1 /* Article.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -136,6 +150,7 @@
 		65BFE59A1F88B2AF00711F69 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				D34C91C51F88F87F00C80FC1 /* FeedTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -220,7 +235,6 @@
 			files = (
 				652B13731F88A3FC00D127FA /* LaunchScreen.storyboard in Resources */,
 				652B13701F88A3FC00D127FA /* Assets.xcassets in Resources */,
-				652B136B1F88A3FC00D127FA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,11 +301,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65BFE59D1F88B2C000711F69 /* ViewController.swift in Sources */,
+				D34C91C21F88F7A800C80FC1 /* FeedViewModel.swift in Sources */,
+				D3C391EF1F8905AF00CA26CA /* ArticleViewController.swift in Sources */,
+				D34C91CA1F88FC4000C80FC1 /* UITableView+CellHelpers.swift in Sources */,
+				65BFE59D1F88B2C000711F69 /* FeedViewController.swift in Sources */,
 				652B137C1F88A66500D127FA /* Router.swift in Sources */,
 				652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */,
+				D34C91C41F88F7C900C80FC1 /* Article.swift in Sources */,
+				D34C91C81F88F97500C80FC1 /* Constants.swift in Sources */,
 				652B13661F88A3FC00D127FA /* AppDelegate.swift in Sources */,
 				652B137E1F88A6A500D127FA /* Provider.swift in Sources */,
+				D34C91C61F88F87F00C80FC1 /* FeedTableViewCell.swift in Sources */,
 				652B136E1F88A3FC00D127FA /* calhacks4.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,14 +319,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		652B13691F88A3FC00D127FA /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				652B136A1F88A3FC00D127FA /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		652B13711F88A3FC00D127FA /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -431,10 +443,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XC24A8J3QX;
+				DEVELOPMENT_TEAM = P3XRP6EUV6;
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nicholas-swift.calhacks4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brianhans.calhacks4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -447,10 +459,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = XC24A8J3QX;
+				DEVELOPMENT_TEAM = P3XRP6EUV6;
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nicholas-swift.calhacks4";
+				PRODUCT_BUNDLE_IDENTIFIER = com.brianhans.calhacks4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
