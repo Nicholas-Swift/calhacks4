@@ -6,7 +6,7 @@
 //  Copyright © 2017 Nick Swift. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 extension UIImageView {
   

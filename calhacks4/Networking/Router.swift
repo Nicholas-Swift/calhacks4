@@ -7,36 +7,50 @@
 //
 
 import Foundation
+import Alamofire
 
 enum Router {
   
   // MARK: - Cases
   case test
-  
+
   // MARK: - Base URL
   var baseURL: String {
     switch self {
-    case test:
+    case .test:
       return "https:fewjiofw"
     }
   }
-  
+
   // MARK: - Path
   var path: String {
     switch self {
-    case test:
+    case .test:
       return "/path"
     }
   }
-  
+
   // MARK: - Method
-  var method: Method {
+  var method: HTTPMethod {
     switch self {
-    case test:
+    case .test:
       return .get
     }
   }
   
-  // MARK: - 
+  // MARK: - Parameters
+  var parameters: [String: Any] {
+    return [:]
+  }
+  
+  // MARK: - Encoding
+  var encoding: ParameterEncoding {
+    return JSONEncoding.default
+  }
+  
+  // MARK: - Headers
+  var headers: [String: String]? {
+    return nil
+  }
   
 }
