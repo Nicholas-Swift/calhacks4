@@ -16,6 +16,7 @@
 		652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */; };
 		65BFE59D1F88B2C000711F69 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFE59C1F88B2C000711F69 /* FeedViewController.swift */; };
 		B4E0A9406D672E4078B91ED7 /* Pods_calhacks4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */; };
+		D33BCDF11F898B9C006ED252 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33BCDF01F898B9C006ED252 /* Card.swift */; };
 		D34C91C21F88F7A800C80FC1 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C11F88F7A800C80FC1 /* FeedViewModel.swift */; };
 		D34C91C41F88F7C900C80FC1 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C31F88F7C900C80FC1 /* Article.swift */; };
 		D34C91C61F88F87F00C80FC1 /* FeedTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C51F88F87F00C80FC1 /* FeedTableViewCell.swift */; };
@@ -24,6 +25,7 @@
 		D3C391EF1F8905AF00CA26CA /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */; };
 		D3C391F11F894FDF00CA26CA /* SourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C391F01F894FDF00CA26CA /* SourceView.swift */; };
 		FA661D061F898EE90059645C /* NewsPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA661D051F898EE90059645C /* NewsPiece.swift */; };
+		D3CBBD7E1F89909C00A37B96 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,7 @@
 		652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundImage.swift"; sourceTree = "<group>"; };
 		65BFE59C1F88B2C000711F69 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		D2F1547557832C30C7B2875D /* Pods-calhacks4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calhacks4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4.debug.xcconfig"; sourceTree = "<group>"; };
+		D33BCDF01F898B9C006ED252 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Card.swift; path = calhacks4/Controllers/Card.swift; sourceTree = SOURCE_ROOT; };
 		D34C91C11F88F7A800C80FC1 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
 		D34C91C31F88F7C900C80FC1 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Article.swift; path = calhacks4/Controllers/Article.swift; sourceTree = SOURCE_ROOT; };
 		D34C91C51F88F87F00C80FC1 /* FeedTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FeedTableViewCell.swift; path = calhacks4/Controllers/FeedTableViewCell.swift; sourceTree = SOURCE_ROOT; };
@@ -48,6 +51,7 @@
 		D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		D3C391F01F894FDF00CA26CA /* SourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SourceView.swift; path = calhacks4/Controllers/SourceView.swift; sourceTree = SOURCE_ROOT; };
 		FA661D051F898EE90059645C /* NewsPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPiece.swift; sourceTree = "<group>"; };
+		D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +144,7 @@
 				D34C91C11F88F7A800C80FC1 /* FeedViewModel.swift */,
 				D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */,
 				FA661D051F898EE90059645C /* NewsPiece.swift */,
+				D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 			children = (
 				D34C91C51F88F87F00C80FC1 /* FeedTableViewCell.swift */,
 				D3C391F01F894FDF00CA26CA /* SourceView.swift */,
+				D33BCDF01F898B9C006ED252 /* Card.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -317,10 +323,12 @@
 				D34C91C41F88F7C900C80FC1 /* Article.swift in Sources */,
 				D3C391F11F894FDF00CA26CA /* SourceView.swift in Sources */,
 				D34C91C81F88F97500C80FC1 /* Constants.swift in Sources */,
+				D33BCDF11F898B9C006ED252 /* Card.swift in Sources */,
 				652B13661F88A3FC00D127FA /* AppDelegate.swift in Sources */,
 				652B137E1F88A6A500D127FA /* Provider.swift in Sources */,
 				D34C91C61F88F87F00C80FC1 /* FeedTableViewCell.swift in Sources */,
 				652B136E1F88A3FC00D127FA /* calhacks4.xcdatamodeld in Sources */,
+				D3CBBD7E1F89909C00A37B96 /* SummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
