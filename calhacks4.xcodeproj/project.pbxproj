@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		652B13661F88A3FC00D127FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B13651F88A3FC00D127FA /* AppDelegate.swift */; };
-		652B13681F88A3FC00D127FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B13671F88A3FC00D127FA /* ViewController.swift */; };
 		652B136B1F88A3FC00D127FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652B13691F88A3FC00D127FA /* Main.storyboard */; };
 		652B136E1F88A3FC00D127FA /* calhacks4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 652B136C1F88A3FC00D127FA /* calhacks4.xcdatamodeld */; };
 		652B13701F88A3FC00D127FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652B136F1F88A3FC00D127FA /* Assets.xcassets */; };
@@ -16,6 +15,7 @@
 		652B137C1F88A66500D127FA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B137B1F88A66500D127FA /* Router.swift */; };
 		652B137E1F88A6A500D127FA /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B137D1F88A6A500D127FA /* Provider.swift */; };
 		652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */; };
+		65BFE59D1F88B2C000711F69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65BFE59C1F88B2C000711F69 /* ViewController.swift */; };
 		B4E0A9406D672E4078B91ED7 /* Pods_calhacks4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,6 @@
 		45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_calhacks4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B13621F88A3FB00D127FA /* calhacks4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calhacks4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B13651F88A3FC00D127FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		652B13671F88A3FC00D127FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		652B136A1F88A3FC00D127FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		652B136D1F88A3FC00D127FA /* calhacks4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = calhacks4.xcdatamodel; sourceTree = "<group>"; };
 		652B136F1F88A3FC00D127FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -33,6 +32,7 @@
 		652B137B1F88A66500D127FA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		652B137D1F88A6A500D127FA /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
 		652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundImage.swift"; sourceTree = "<group>"; };
+		65BFE59C1F88B2C000711F69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D2F1547557832C30C7B2875D /* Pods-calhacks4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calhacks4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -77,11 +77,14 @@
 		652B13641F88A3FB00D127FA /* calhacks4 */ = {
 			isa = PBXGroup;
 			children = (
+				65BFE5981F88B2AF00711F69 /* Controllers */,
+				65BFE5991F88B2AF00711F69 /* Models */,
+				65BFE59B1F88B2AF00711F69 /* Services */,
+				65BFE59A1F88B2AF00711F69 /* Views */,
 				652B137F1F88A83B00D127FA /* Extensions */,
 				652B13801F88A83B00D127FA /* Utilities */,
 				652B137A1F88A65200D127FA /* Networking */,
 				652B13651F88A3FC00D127FA /* AppDelegate.swift */,
-				652B13671F88A3FC00D127FA /* ViewController.swift */,
 				652B13691F88A3FC00D127FA /* Main.storyboard */,
 				652B136F1F88A3FC00D127FA /* Assets.xcassets */,
 				652B13711F88A3FC00D127FA /* LaunchScreen.storyboard */,
@@ -113,6 +116,35 @@
 			children = (
 			);
 			path = Utilities;
+			sourceTree = "<group>";
+		};
+		65BFE5981F88B2AF00711F69 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				65BFE59C1F88B2C000711F69 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		65BFE5991F88B2AF00711F69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		65BFE59A1F88B2AF00711F69 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		65BFE59B1F88B2AF00711F69 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		7BD897D7ADAF598DADC88F38 /* Pods */ = {
@@ -255,7 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				652B13681F88A3FC00D127FA /* ViewController.swift in Sources */,
+				65BFE59D1F88B2C000711F69 /* ViewController.swift in Sources */,
 				652B137C1F88A66500D127FA /* Router.swift in Sources */,
 				652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */,
 				652B13661F88A3FC00D127FA /* AppDelegate.swift in Sources */,
