@@ -16,20 +16,20 @@ class FeedViewModel {
     }
     
     public var rowCount: Int {
-        return articles.count
+        return topics.count
     }
     
-    public func fetchArticles(completion: @escaping ([Article]) -> Void) {
-        let article = Article()
+    public func fetchTopics(completion: @escaping ([Topic]) -> Void) {
+        let topic = Topic()
         
-        Provider.request(router: .getArticles) { [weak self] (result) in
+        Provider.request(router: .getTopics) { [weak self] (result) in
             guard let `self` = self else { return }
             
             switch result {
             case let .success(value):
                 if let json = value as? [[String: Any]] {
-                    self.articles = json.flatMap(Article.init)
-                    completion(self.articles)
+                    self.topics = json.flatMap(Topic.init)
+                    completion(self.topics)
                 }
             case let .failure(error):
                 print(error)
@@ -40,12 +40,12 @@ class FeedViewModel {
 //        completion([article, article,article, article,article, article,article, article])
     }
     
-    func item(for indexPath: IndexPath) -> Article {
-        return articles[indexPath.row]
+    func item(for indexPath: IndexPath) -> Topic {
+        return topics[indexPath.row]
     }
     
     // MARK: Private variables
     
-    private var articles: [Article] = []
+    private var topics: [Topic] = []
 
 }

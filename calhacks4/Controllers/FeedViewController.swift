@@ -19,7 +19,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        viewModel.fetchArticles { [weak self] _ in
+        viewModel.fetchTopics { [weak self] _ in
             self?.tableView.reloadData()
             self?.animatedIndexPaths = Set<IndexPath>()
         }
@@ -75,7 +75,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.navigationController?.pushViewController(ArticleViewController(with: viewModel.item(for: indexPath)), animated: true)
+//        self.navigationController?.pushViewController(ArticleViewController(with: viewModel.item(for: indexPath)), animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
