@@ -22,8 +22,8 @@ class FeedViewModel {
     public func fetchArticles(completion: ([Article]) -> Void) {
         let article = Article()
         
-        self.articles = [article, article]
-        completion([article, article])
+        self.articles = [article, article,article, article,article, article,article, article]
+        completion([article, article,article, article,article, article,article, article])
     }
     
     func item(for indexPath: IndexPath) -> Article {
