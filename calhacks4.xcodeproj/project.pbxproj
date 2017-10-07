@@ -13,9 +13,15 @@
 		652B136E1F88A3FC00D127FA /* calhacks4.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 652B136C1F88A3FC00D127FA /* calhacks4.xcdatamodeld */; };
 		652B13701F88A3FC00D127FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 652B136F1F88A3FC00D127FA /* Assets.xcassets */; };
 		652B13731F88A3FC00D127FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 652B13711F88A3FC00D127FA /* LaunchScreen.storyboard */; };
+		652B137C1F88A66500D127FA /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B137B1F88A66500D127FA /* Router.swift */; };
+		652B137E1F88A6A500D127FA /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B137D1F88A6A500D127FA /* Provider.swift */; };
+		652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */; };
+		B4E0A9406D672E4078B91ED7 /* Pods_calhacks4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		375AB42E77F5B8162D9628F0 /* Pods-calhacks4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calhacks4.release.xcconfig"; path = "Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4.release.xcconfig"; sourceTree = "<group>"; };
+		45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_calhacks4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B13621F88A3FB00D127FA /* calhacks4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calhacks4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B13651F88A3FC00D127FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		652B13671F88A3FC00D127FA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -24,6 +30,10 @@
 		652B136F1F88A3FC00D127FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		652B13721F88A3FC00D127FA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		652B13741F88A3FC00D127FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		652B137B1F88A66500D127FA /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		652B137D1F88A6A500D127FA /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+RoundImage.swift"; sourceTree = "<group>"; };
+		D2F1547557832C30C7B2875D /* Pods-calhacks4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calhacks4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +41,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B4E0A9406D672E4078B91ED7 /* Pods_calhacks4.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0FFDC3A4B4260E4284B0BAF9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		652B13591F88A3FB00D127FA = {
 			isa = PBXGroup;
 			children = (
 				652B13641F88A3FB00D127FA /* calhacks4 */,
 				652B13631F88A3FB00D127FA /* Products */,
+				7BD897D7ADAF598DADC88F38 /* Pods */,
+				0FFDC3A4B4260E4284B0BAF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -56,6 +77,9 @@
 		652B13641F88A3FB00D127FA /* calhacks4 */ = {
 			isa = PBXGroup;
 			children = (
+				652B137F1F88A83B00D127FA /* Extensions */,
+				652B13801F88A83B00D127FA /* Utilities */,
+				652B137A1F88A65200D127FA /* Networking */,
 				652B13651F88A3FC00D127FA /* AppDelegate.swift */,
 				652B13671F88A3FC00D127FA /* ViewController.swift */,
 				652B13691F88A3FC00D127FA /* Main.storyboard */,
@@ -67,6 +91,39 @@
 			path = calhacks4;
 			sourceTree = "<group>";
 		};
+		652B137A1F88A65200D127FA /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				652B137B1F88A66500D127FA /* Router.swift */,
+				652B137D1F88A6A500D127FA /* Provider.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		652B137F1F88A83B00D127FA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				652B13811F88A85200D127FA /* UIImageView+RoundImage.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		652B13801F88A83B00D127FA /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		7BD897D7ADAF598DADC88F38 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D2F1547557832C30C7B2875D /* Pods-calhacks4.debug.xcconfig */,
+				375AB42E77F5B8162D9628F0 /* Pods-calhacks4.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -74,9 +131,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 652B13771F88A3FC00D127FA /* Build configuration list for PBXNativeTarget "calhacks4" */;
 			buildPhases = (
+				0106DF5EA0D0F7D64525F287 /* [CP] Check Pods Manifest.lock */,
 				652B135E1F88A3FB00D127FA /* Sources */,
 				652B135F1F88A3FB00D127FA /* Frameworks */,
 				652B13601F88A3FB00D127FA /* Resources */,
+				8925CC4AD56873A75D9DD2E9 /* [CP] Embed Pods Frameworks */,
+				D4910FE010969ED517DEFB33 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -134,13 +194,72 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0106DF5EA0D0F7D64525F287 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-calhacks4-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8925CC4AD56873A75D9DD2E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4910FE010969ED517DEFB33 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		652B135E1F88A3FB00D127FA /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				652B13681F88A3FC00D127FA /* ViewController.swift in Sources */,
+				652B137C1F88A66500D127FA /* Router.swift in Sources */,
+				652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */,
 				652B13661F88A3FC00D127FA /* AppDelegate.swift in Sources */,
+				652B137E1F88A6A500D127FA /* Provider.swift in Sources */,
 				652B136E1F88A3FC00D127FA /* calhacks4.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -276,9 +395,11 @@
 		};
 		652B13781F88A3FC00D127FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D2F1547557832C30C7B2875D /* Pods-calhacks4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XC24A8J3QX;
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nicholas-swift.calhacks4";
@@ -290,9 +411,11 @@
 		};
 		652B13791F88A3FC00D127FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 375AB42E77F5B8162D9628F0 /* Pods-calhacks4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = XC24A8J3QX;
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.nicholas-swift.calhacks4";
