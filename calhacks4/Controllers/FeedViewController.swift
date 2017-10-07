@@ -75,7 +75,8 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        self.navigationController?.pushViewController(ArticleViewController(with: viewModel.item(for: indexPath)), animated: true)
+        self.navigationController?.pushViewController(SummaryViewController(), animated: true)
+//        self.navigationController?.pushViewController(ArticleViewController(with: viewModel.item(for: indexPath)), animated: true)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

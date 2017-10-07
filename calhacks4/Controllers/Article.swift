@@ -31,13 +31,13 @@ struct Article {
     }
     
     init(json: [String: Any]) {
-        self.title = json["title"] as! String
+        self.title = json["title"] as? String ?? ""
         self.text = json["text"] as? String ?? ""
         self.description = json["description"] as? String ?? ""
         self.tags = json["tags"] as? [String] ?? []
         self.sources = []
         let imageString = json["image_url"] as? String ?? ""
-        self.imageURL = URL(string: imageString)!
+        self.imageURL = URL(string: imageString) ?? URL(string: "https://google.com")!
         self.date = json["date"] as? String ?? ""
     }
 }

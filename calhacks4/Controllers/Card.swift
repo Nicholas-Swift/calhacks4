@@ -39,6 +39,8 @@ class Card: UIView {
         NSLayoutConstraint.activate([subtitleLabel.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -15),
                                      subtitleLabel.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20)])
         
+        NSLayoutConstraint.activate([self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 1.375)])
+        
     }
     
     // MARK: Private variables
