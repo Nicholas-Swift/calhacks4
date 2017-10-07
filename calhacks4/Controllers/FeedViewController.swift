@@ -21,7 +21,7 @@ class FeedViewController: UIViewController {
         setupViews()
         viewModel.fetchArticles { [weak self] _ in
             self?.tableView.reloadData()
-            animatedIndexPaths = Set<IndexPath>()
+            self?.animatedIndexPaths = Set<IndexPath>()
         }
     }
     

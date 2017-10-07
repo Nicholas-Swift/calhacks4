@@ -19,11 +19,25 @@ class FeedViewModel {
         return articles.count
     }
     
-    public func fetchArticles(completion: ([Article]) -> Void) {
+    public func fetchArticles(completion: @escaping ([Article]) -> Void) {
         let article = Article()
         
-        self.articles = [article, article,article, article,article, article,article, article]
-        completion([article, article,article, article,article, article,article, article])
+        Provider.request(router: .getArticles) { [weak self] (result) in
+            guard let `self` = self else { return }
+            
+            switch result {
+            case let .success(value):
+                if let json = value as? [[String: Any]] {
+                    self.articles = json.flatMap(Article.init)
+                    completion(self.articles)
+                }
+            case let .failure(error):
+                print(error)
+            }
+        }
+        
+//        self.articles = [article, article,article, article,article, article,article, article]
+//        completion([article, article,article, article,article, article,article, article])
     }
     
     func item(for indexPath: IndexPath) -> Article {

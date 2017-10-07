@@ -13,7 +13,7 @@ struct Article {
     let title: String
     let text: String
     var description: String
-    let date: Date
+    let date: String
     let imageURL: URL
     let tags: [String]
     let sources: [(title: String, url: URL)]
@@ -25,8 +25,19 @@ struct Article {
         self.sources = [("CNN", URL(string: "https://www.google.com")!), ("Fox", URL(string: "https://www.google.com")!)]
         self.tags = ["Fake News", "Real News", "Trump"]
         self.description = ""
-        self.date = Date()
+        self.date = ""
         let endIndex = text.index(self.text.startIndex, offsetBy: 255, limitedBy: self.text.endIndex) ?? text.endIndex
         self.description = String(self.text[..<endIndex])
+    }
+    
+    init(json: [String: Any]) {
+        self.title = json["title"] as! String
+        self.text = json["text"] as? String ?? ""
+        self.description = json["description"] as? String ?? ""
+        self.tags = json["tags"] as? [String] ?? []
+        self.sources = []
+        let imageString = json["image_url"] as? String ?? ""
+        self.imageURL = URL(string: imageString)!
+        self.date = json["date"] as? String ?? ""
     }
 }
