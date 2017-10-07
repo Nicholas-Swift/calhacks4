@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 class ArticleViewController: UIViewController {
     
@@ -43,6 +44,7 @@ class ArticleViewController: UIViewController {
         articleLabel.attributedText = NSAttributedString(string: article.text, attributes: [NSAttributedStringKey.paragraphStyle: paragraphStyle])
         imageView.af_setImage(withURL: article.imageURL)
         
+        
         setupConstraints()
     }
     
@@ -61,7 +63,18 @@ class ArticleViewController: UIViewController {
                                      scrollView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)])
         
         // Image view constraints
-        NSLayoutConstraint.activate([imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1.504)])
+        NSLayoutConstraint.activate([imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 1.504),
+                                     imageView.widthAnchor.constraint(equalTo: contentStackView.widthAnchor)])
+    }
+    
+    @objc func sourceButtonPressed(sender: UIGestureRecognizer) {
+        if let sourceView = sender.view as? SourceView {
+            if let url = sourceView.url {
+                let safariVC = SFSafariViewController(url: url)
+                safariVC.preferredControlTintColor = .black
+                self.present(safariVC, animated: true, completion: nil)
+            }
+        }
     }
     
 
@@ -106,11 +119,58 @@ class ArticleViewController: UIViewController {
     }()
     
     private lazy var contentStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, articleLabel])
+        let tagScrollView = UIScrollView()
+        tagScrollView.showsHorizontalScrollIndicator = false
+
+        if self.tagsStackView.arrangedSubviews.count > 0 {
+            tagsStackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            tagScrollView.addSubview(self.tagsStackView)
+            NSLayoutConstraint.activate([tagsStackView.topAnchor.constraint(equalTo: tagScrollView.topAnchor),
+                                         tagsStackView.leadingAnchor.constraint(equalTo: tagScrollView.leadingAnchor),
+                                         tagsStackView.trailingAnchor.constraint(equalTo: tagScrollView.trailingAnchor),
+                                         tagsStackView.bottomAnchor.constraint(equalTo: tagScrollView.bottomAnchor)])
+        }
+        
+        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, articleLabel, sourcesStackView, tagScrollView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .leading
         stackView.spacing = 35
+        
+        NSLayoutConstraint.activate([tagScrollView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+                                     tagScrollView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+                                     tagScrollView.heightAnchor.constraint(equalTo: sourcesStackView.heightAnchor)])
+        
+        return stackView
+    }()
+    
+    private lazy var sourcesStackView: UIStackView = {
+        var sourceViews: [UIView] = [SourceView(title: "Sources:", url: nil, isTitle: true)]
+        for source in self.article.sources {
+            let sourceView: SourceView = SourceView(title: source.title, url: source.url, isTitle: false)
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sourceButtonPressed(sender:)))
+            sourceView.addGestureRecognizer(tapGesture)
+            sourceViews.append(sourceView)
+        }
+        
+        let stackView = UIStackView(arrangedSubviews: sourceViews)
+        stackView.axis = .horizontal
+        stackView.spacing = 5
+        
+        return stackView
+    }()
+    
+    private lazy var tagsStackView: UIStackView = {
+        var tagViews: [UIView] = [SourceView(title: "Tags:", url: nil, isTitle: true)]
+        for tag in self.article.tags {
+            let sourceView: SourceView = SourceView(title: tag, url: nil, isTitle: false)
+            tagViews.append(sourceView)
+        }
+        
+        let stackView = UIStackView(arrangedSubviews: tagViews)
+        stackView.axis = .horizontal
+        stackView.spacing = 5
         
         return stackView
     }()

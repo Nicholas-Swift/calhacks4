@@ -31,17 +31,23 @@ class FeedViewController: UIViewController {
         self.navigationItem.title = "Newstral"
         
         self.view.addSubview(tableView)
-        tableView.frame = self.view.frame
         tableView.register(cellClass: FeedTableViewCell.self)
+        
+        NSLayoutConstraint.activate([tableView.topAnchor.constraint(equalTo: self.view.topAnchor),
+                                     tableView.bottomAnchor.constraint(equalTo: self.view.bottomAnchor),
+                                     tableView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor),
+                                     tableView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor)])
     }
     
     // MARK: Private variables
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
         tableView.separatorStyle = .none
+        tableView.tintColor = .clear
         
         return tableView
     }()
@@ -61,6 +67,7 @@ extension FeedViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: FeedTableViewCell = tableView.dequeueCell(for: indexPath)
         cell.setup(with: viewModel.item(for: indexPath))
+        cell.selectionStyle = .none
         return cell
     }
     
