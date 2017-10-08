@@ -33,10 +33,10 @@ class FeedTableViewCell: UITableViewCell {
     
     // MARK: Public functions
     
-    func setup(with article: Article) {
-        photoImageView.af_setImage(withURL: article.imageURL)
-        titleLabel.text = article.title
-        subtitleLabel.text = article.description
+    func setup(with topic: Topic) {
+        photoImageView.af_setImage(withURL: topic.imageURL)
+        titleLabel.text = topic.title
+        subtitleLabel.text = topic.summary
     }
     
     

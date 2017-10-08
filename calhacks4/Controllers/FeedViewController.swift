@@ -19,7 +19,7 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupViews()
-        viewModel.fetchArticles { [weak self] _ in
+        viewModel.fetchTopics { [weak self] _ in
             self?.tableView.reloadData()
             self?.animatedIndexPaths = Set<IndexPath>()
         }

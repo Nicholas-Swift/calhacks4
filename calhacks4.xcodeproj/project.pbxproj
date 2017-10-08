@@ -24,6 +24,7 @@
 		D34C91CA1F88FC4000C80FC1 /* UITableView+CellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C91F88FC4000C80FC1 /* UITableView+CellHelpers.swift */; };
 		D3C391EF1F8905AF00CA26CA /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */; };
 		D3C391F11F894FDF00CA26CA /* SourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C391F01F894FDF00CA26CA /* SourceView.swift */; };
+		FA661D061F898EE90059645C /* NewsPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA661D051F898EE90059645C /* NewsPiece.swift */; };
 		D3CBBD7E1F89909C00A37B96 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +50,7 @@
 		D34C91C91F88FC4000C80FC1 /* UITableView+CellHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+CellHelpers.swift"; path = "calhacks4/UITableView+CellHelpers.swift"; sourceTree = SOURCE_ROOT; };
 		D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		D3C391F01F894FDF00CA26CA /* SourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SourceView.swift; path = calhacks4/Controllers/SourceView.swift; sourceTree = SOURCE_ROOT; };
+		FA661D051F898EE90059645C /* NewsPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPiece.swift; sourceTree = "<group>"; };
 		D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +143,7 @@
 				65BFE59C1F88B2C000711F69 /* FeedViewController.swift */,
 				D34C91C11F88F7A800C80FC1 /* FeedViewModel.swift */,
 				D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */,
+				FA661D051F898EE90059645C /* NewsPiece.swift */,
 				D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */,
 			);
 			path = Controllers;
@@ -265,7 +268,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8925CC4AD56873A75D9DD2E9 /* [CP] Embed Pods Frameworks */ = {
@@ -313,6 +316,7 @@
 				D34C91C21F88F7A800C80FC1 /* FeedViewModel.swift in Sources */,
 				D3C391EF1F8905AF00CA26CA /* ArticleViewController.swift in Sources */,
 				D34C91CA1F88FC4000C80FC1 /* UITableView+CellHelpers.swift in Sources */,
+				FA661D061F898EE90059645C /* NewsPiece.swift in Sources */,
 				65BFE59D1F88B2C000711F69 /* FeedViewController.swift in Sources */,
 				652B137C1F88A66500D127FA /* Router.swift in Sources */,
 				652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */,
@@ -454,12 +458,14 @@
 			baseConfigurationReference = D2F1547557832C30C7B2875D /* Pods-calhacks4.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P3XRP6EUV6;
+				DEVELOPMENT_TEAM = E2G7ZKJKQ5;
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.brianhans.calhacks4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderdejeu.calhacks4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -470,12 +476,14 @@
 			baseConfigurationReference = 375AB42E77F5B8162D9628F0 /* Pods-calhacks4.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = P3XRP6EUV6;
+				DEVELOPMENT_TEAM = E2G7ZKJKQ5;
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.brianhans.calhacks4;
+				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderdejeu.calhacks4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
