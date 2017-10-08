@@ -28,9 +28,9 @@ enum Router {
   var path: String {
     switch self {
     case .getTopics:
-      return "/topic"
+      return "/topics"
     case .getTopic(let id):
-      return "/topic/\(id)"
+      return "/topics/\(id)"
     }
   }
 

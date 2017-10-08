@@ -147,8 +147,8 @@ class ArticleViewController: UIViewController {
     
     private lazy var sourcesStackView: UIStackView = {
         var sourceViews: [UIView] = [SourceView(title: "Sources:", url: nil, isTitle: true)]
-        for source in self.article.sources {
-            let sourceView: SourceView = SourceView(title: source.title, url: source.url, isTitle: false)
+        for (index, ref) in self.article.refs.enumerated() {
+            let sourceView: SourceView = SourceView(title: "\(index)", url: ref, isTitle: false)
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sourceButtonPressed(sender:)))
             sourceView.addGestureRecognizer(tapGesture)
             sourceViews.append(sourceView)
