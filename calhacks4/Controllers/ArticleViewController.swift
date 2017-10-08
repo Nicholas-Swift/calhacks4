@@ -29,6 +29,7 @@ class ArticleViewController: UIViewController {
     }
     
     func setupViews() {
+        self.navigationItem.title = article.source
         self.navigationItem.largeTitleDisplayMode = .never
         self.view.backgroundColor = .white
         

@@ -56,8 +56,19 @@ class SummaryViewController: UIViewController {
         }
     }
     
-    func setupViews() {
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationItem.title = "Story"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
         self.navigationItem.title = ""
+    }
+    
+    func setupViews() {
         self.navigationItem.largeTitleDisplayMode = .never
         self.view.backgroundColor = .white
         

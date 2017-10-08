@@ -25,12 +25,23 @@ class FeedViewController: UIViewController {
         }
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationItem.title = "Topics"
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        navigationItem.title = ""
+    }
+    
     // MARK: Custom methods
     
     func setupViews() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .always
-        self.navigationItem.title = "News Report"
         
         self.view.addSubview(tableView)
         tableView.register(cellClass: FeedTableViewCell.self)
