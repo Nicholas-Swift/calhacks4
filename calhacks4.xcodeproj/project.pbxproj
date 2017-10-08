@@ -32,7 +32,7 @@
 /* Begin PBXFileReference section */
 		375AB42E77F5B8162D9628F0 /* Pods-calhacks4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calhacks4.release.xcconfig"; path = "Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4.release.xcconfig"; sourceTree = "<group>"; };
 		45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_calhacks4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		652B13621F88A3FB00D127FA /* calhacks4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calhacks4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		652B13621F88A3FB00D127FA /* News Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News Report.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B13651F88A3FC00D127FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		652B136D1F88A3FC00D127FA /* calhacks4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = calhacks4.xcdatamodel; sourceTree = "<group>"; };
 		652B136F1F88A3FC00D127FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		652B13631F88A3FB00D127FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				652B13621F88A3FB00D127FA /* calhacks4.app */,
+				652B13621F88A3FB00D127FA /* News Report.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -206,7 +206,7 @@
 			);
 			name = calhacks4;
 			productName = calhacks4;
-			productReference = 652B13621F88A3FB00D127FA /* calhacks4.app */;
+			productReference = 652B13621F88A3FB00D127FA /* News Report.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -468,7 +468,7 @@
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderdejeu.calhacks4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "News Report";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -486,7 +486,7 @@
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderdejeu.calhacks4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "News Report";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
