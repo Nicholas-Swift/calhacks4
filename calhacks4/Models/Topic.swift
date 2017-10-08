@@ -28,6 +28,6 @@ struct Topic {
     self.title = json["title"] as? String ?? ""
     self.summary = json["summary"] as? String ?? ""
     let imageString = json["image_url"] as? String ?? ""
-    self.imageURL = URL(string: imageString)!
+    self.imageURL = URL(string: imageString) ?? URL(string: "https://images.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%3Fid%3DOIP.xIlkOcLORHQRjffDxDJdcgEsDI%26pid%3D15.1&f=1")!
   }
 }
