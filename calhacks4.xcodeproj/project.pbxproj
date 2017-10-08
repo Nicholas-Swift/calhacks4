@@ -24,14 +24,15 @@
 		D34C91CA1F88FC4000C80FC1 /* UITableView+CellHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C91C91F88FC4000C80FC1 /* UITableView+CellHelpers.swift */; };
 		D3C391EF1F8905AF00CA26CA /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */; };
 		D3C391F11F894FDF00CA26CA /* SourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C391F01F894FDF00CA26CA /* SourceView.swift */; };
-		FA661D061F898EE90059645C /* NewsPiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA661D051F898EE90059645C /* NewsPiece.swift */; };
 		D3CBBD7E1F89909C00A37B96 /* SummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */; };
+		D3CBBD801F89ABA800A37B96 /* SummaryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3CBBD7F1F89ABA800A37B96 /* SummaryViewModel.swift */; };
+		FA661D061F898EE90059645C /* Topic.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA661D051F898EE90059645C /* Topic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		375AB42E77F5B8162D9628F0 /* Pods-calhacks4.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-calhacks4.release.xcconfig"; path = "Pods/Target Support Files/Pods-calhacks4/Pods-calhacks4.release.xcconfig"; sourceTree = "<group>"; };
 		45254DD4BB4741D079F13FC0 /* Pods_calhacks4.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_calhacks4.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		652B13621F88A3FB00D127FA /* calhacks4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = calhacks4.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		652B13621F88A3FB00D127FA /* News Report.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "News Report.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		652B13651F88A3FC00D127FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		652B136D1F88A3FC00D127FA /* calhacks4.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = calhacks4.xcdatamodel; sourceTree = "<group>"; };
 		652B136F1F88A3FC00D127FA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -50,8 +51,9 @@
 		D34C91C91F88FC4000C80FC1 /* UITableView+CellHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UITableView+CellHelpers.swift"; path = "calhacks4/UITableView+CellHelpers.swift"; sourceTree = SOURCE_ROOT; };
 		D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		D3C391F01F894FDF00CA26CA /* SourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SourceView.swift; path = calhacks4/Controllers/SourceView.swift; sourceTree = SOURCE_ROOT; };
-		FA661D051F898EE90059645C /* NewsPiece.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsPiece.swift; sourceTree = "<group>"; };
 		D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewController.swift; sourceTree = "<group>"; };
+		D3CBBD7F1F89ABA800A37B96 /* SummaryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SummaryViewModel.swift; sourceTree = "<group>"; };
+		FA661D051F898EE90059645C /* Topic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Topic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +89,7 @@
 		652B13631F88A3FB00D127FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				652B13621F88A3FB00D127FA /* calhacks4.app */,
+				652B13621F88A3FB00D127FA /* News Report.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -143,8 +145,8 @@
 				65BFE59C1F88B2C000711F69 /* FeedViewController.swift */,
 				D34C91C11F88F7A800C80FC1 /* FeedViewModel.swift */,
 				D3C391EE1F8905AF00CA26CA /* ArticleViewController.swift */,
-				FA661D051F898EE90059645C /* NewsPiece.swift */,
 				D3CBBD7D1F89909C00A37B96 /* SummaryViewController.swift */,
+				D3CBBD7F1F89ABA800A37B96 /* SummaryViewModel.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -152,6 +154,7 @@
 		65BFE5991F88B2AF00711F69 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA661D051F898EE90059645C /* Topic.swift */,
 				D34C91C31F88F7C900C80FC1 /* Article.swift */,
 			);
 			path = Models;
@@ -203,7 +206,7 @@
 			);
 			name = calhacks4;
 			productName = calhacks4;
-			productReference = 652B13621F88A3FB00D127FA /* calhacks4.app */;
+			productReference = 652B13621F88A3FB00D127FA /* News Report.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -315,8 +318,9 @@
 			files = (
 				D34C91C21F88F7A800C80FC1 /* FeedViewModel.swift in Sources */,
 				D3C391EF1F8905AF00CA26CA /* ArticleViewController.swift in Sources */,
+				D3CBBD801F89ABA800A37B96 /* SummaryViewModel.swift in Sources */,
 				D34C91CA1F88FC4000C80FC1 /* UITableView+CellHelpers.swift in Sources */,
-				FA661D061F898EE90059645C /* NewsPiece.swift in Sources */,
+				FA661D061F898EE90059645C /* Topic.swift in Sources */,
 				65BFE59D1F88B2C000711F69 /* FeedViewController.swift in Sources */,
 				652B137C1F88A66500D127FA /* Router.swift in Sources */,
 				652B13821F88A85200D127FA /* UIImageView+RoundImage.swift in Sources */,
@@ -464,7 +468,7 @@
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderdejeu.calhacks4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "News Report";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -482,7 +486,7 @@
 				INFOPLIST_FILE = calhacks4/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.alexanderdejeu.calhacks4;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "News Report";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -16,13 +16,13 @@ struct Article {
     let date: String
     let imageURL: URL
     let tags: [String]
-    let sources: [(title: String, url: URL)]
+    let refs: [URL]
     
     init() {
         self.title = "Company Scrambles as Weinstein Takes Leave and a Third of the Board Resigns"
         self.text = "The Weinstein Company struggled to perform damage control on Friday amid allegations of rampant sexual harassment by its co-chairman Harvey Weinstein and turmoil among its ranks. One-third of the company’s all-male board resigned, while board members who remained hired an outside law firm to investigate the allegations and announced that Mr. Weinstein would take an indefinite leave of absence immediately.\nMr. Weinstein had said on Thursday that he would take a leave of absence, but it was unclear when he would leave, how long he would be gone, or what it meant for his relationship with the company he co-founded.\n“As Harvey has said, it is important for him to get professional help for the problems he has acknowledged,” said a statement signed by four board "
         self.imageURL = URL(string: "https://static01.nyt.com/images/2017/10/07/us/07xp-weinstein2/07xp-weinstein2-master768.jpg")!
-        self.sources = [("CNN", URL(string: "https://www.google.com")!), ("Fox", URL(string: "https://www.google.com")!)]
+        self.refs = []// [("CNN", URL(string: "https://www.google.com")!), ("Fox", URL(string: "https://www.google.com")!)]
         self.tags = ["Fake News", "Real News", "Trump"]
         self.description = ""
         self.date = ""
@@ -32,10 +32,10 @@ struct Article {
     
     init(json: [String: Any]) {
         self.title = json["title"] as? String ?? ""
-        self.text = json["text"] as? String ?? ""
-        self.description = json["description"] as? String ?? ""
+        self.text = json["full_text"] as? String ?? ""
+        self.description = json["desc_text"] as? String ?? ""
         self.tags = json["tags"] as? [String] ?? []
-        self.sources = []
+        self.refs = (json["refs"] as? [String] ?? []).flatMap{ URL(string: $0) }
         let imageString = json["image_url"] as? String ?? ""
         self.imageURL = URL(string: imageString) ?? URL(string: "https://google.com")!
         self.date = json["date"] as? String ?? ""

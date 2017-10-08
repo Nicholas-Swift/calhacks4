@@ -20,7 +20,6 @@ class FeedViewModel {
     }
     
     public func fetchTopics(completion: @escaping ([Topic]) -> Void) {
-        let topic = Topic()
         
         Provider.request(router: .getTopics) { [weak self] (result) in
             guard let `self` = self else { return }
@@ -36,8 +35,6 @@ class FeedViewModel {
             }
         }
         
-//        self.articles = [article, article,article, article,article, article,article, article]
-//        completion([article, article,article, article,article, article,article, article])
     }
     
     func item(for indexPath: IndexPath) -> Topic {

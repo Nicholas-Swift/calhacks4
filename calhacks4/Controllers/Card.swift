@@ -11,9 +11,8 @@ import UIKit
 
 class Card: UIView {
     
-    init(title: String, subtitle: String?) {
-        self.title = title
-        self.subtitle = subtitle
+    init(article: Article) {
+        self.article = article
         super.init(frame: .zero)
         setupViews()
     }
@@ -45,15 +44,16 @@ class Card: UIView {
     
     // MARK: Private variables
     
-    private let title: String
-    private let subtitle: String?
+    public let article: Article
+    
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = title
+        label.text = self.article.title
         label.font = Font.cardTitle
         label.textColor = .black
+        label.numberOfLines = 0
         
         return label
     }()
@@ -61,7 +61,7 @@ class Card: UIView {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = subtitle
+        label.text = ""
         label.font = Font.cardSubtitle
         label.textColor = .black
         
