@@ -14,9 +14,10 @@ struct Article {
     let text: String
     var description: String
     let date: String
-    let imageURL: URL
+    let imageURL: URL?
     let tags: [String]
     let refs: [URL]
+    let source: String
     
     init() {
         self.title = "Company Scrambles as Weinstein Takes Leave and a Third of the Board Resigns"
@@ -26,18 +27,25 @@ struct Article {
         self.tags = ["Fake News", "Real News", "Trump"]
         self.description = ""
         self.date = ""
+        self.source = "Fake"
         let endIndex = text.index(self.text.startIndex, offsetBy: 255, limitedBy: self.text.endIndex) ?? text.endIndex
         self.description = String(self.text[..<endIndex])
     }
     
-    init(json: [String: Any]) {
-        self.title = json["title"] as? String ?? ""
-        self.text = json["full_text"] as? String ?? ""
+    init?(json: [String: Any]) {
+        guard let title = json["title"] as? String, let text = json["full_text"] as? String, !title.isEmpty && !text.isEmpty else { return nil }
+        self.title = title
+        self.text = text
+        
         self.description = json["desc_text"] as? String ?? ""
         self.tags = json["tags"] as? [String] ?? []
-        self.refs = (json["refs"] as? [String] ?? []).flatMap{ URL(string: $0) }
-        let imageString = json["image_url"] as? String ?? ""
-        self.imageURL = URL(string: imageString) ?? URL(string: "https://google.com")!
+        self.refs = (json["refs"] as? [String] ?? []).flatMap{ URL(string: $0) }.filter{ $0.absoluteString.contains("http") }
+        self.source = json["source"] as? String ?? ""
+        if let imageString = json["image_url"] as? String {
+            self.imageURL = URL(string: imageString)
+        } else {
+            self.imageURL = nil
+        }
         self.date = json["date"] as? String ?? ""
     }
 }

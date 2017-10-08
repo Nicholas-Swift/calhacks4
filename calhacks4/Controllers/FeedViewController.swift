@@ -30,7 +30,7 @@ class FeedViewController: UIViewController {
     func setupViews() {
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .always
-        self.navigationItem.title = "Newstral"
+        self.navigationItem.title = "News Report"
         
         self.view.addSubview(tableView)
         tableView.register(cellClass: FeedTableViewCell.self)

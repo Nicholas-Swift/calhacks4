@@ -19,6 +19,7 @@ struct Color {
 }
 
 struct Font {
+    static let summaryTitle: UIFont = UIFont.boldSystemFont(ofSize: 28)
     static let title: UIFont = UIFont.boldSystemFont(ofSize: 24)
     static let subtitle: UIFont = UIFont.systemFont(ofSize: 12)
     static let cardTitle: UIFont = UIFont.boldSystemFont(ofSize: 24)

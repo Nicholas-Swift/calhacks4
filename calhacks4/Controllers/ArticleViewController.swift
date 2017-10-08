@@ -42,10 +42,14 @@ class ArticleViewController: UIViewController {
         paragraphStyle.lineSpacing = 5
         paragraphStyle.paragraphSpacing = 5
         articleLabel.attributedText = NSAttributedString(string: article.text, attributes: [NSAttributedStringKey.paragraphStyle: paragraphStyle])
-        imageView.af_setImage(withURL: article.imageURL)
-        
         
         setupConstraints()
+        
+        if let imageUrl = article.imageURL {
+            imageView.af_setImage(withURL: imageUrl)
+        } else {
+            imageView.removeFromSuperview()
+        }
     }
     
     func setupConstraints() {
@@ -106,6 +110,7 @@ class ArticleViewController: UIViewController {
         label.font = Font.title
         label.textColor = .black
         label.numberOfLines = 0
+        label.text = self.article.title
         
         return label
     }()
@@ -114,6 +119,7 @@ class ArticleViewController: UIViewController {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 0
+        label.text = self.article.text
         
         return label
     }()
@@ -122,25 +128,48 @@ class ArticleViewController: UIViewController {
         let tagScrollView = UIScrollView()
         tagScrollView.showsHorizontalScrollIndicator = false
 
-        if self.tagsStackView.arrangedSubviews.count > 0 {
+        if self.tagsStackView.arrangedSubviews.count > 1 {
             tagsStackView.translatesAutoresizingMaskIntoConstraints = false
             
             tagScrollView.addSubview(self.tagsStackView)
-            NSLayoutConstraint.activate([tagsStackView.topAnchor.constraint(equalTo: tagScrollView.topAnchor),
-                                         tagsStackView.leadingAnchor.constraint(equalTo: tagScrollView.leadingAnchor),
-                                         tagsStackView.trailingAnchor.constraint(equalTo: tagScrollView.trailingAnchor),
-                                         tagsStackView.bottomAnchor.constraint(equalTo: tagScrollView.bottomAnchor)])
         }
         
-        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, articleLabel, sourcesStackView, tagScrollView])
+        let sourcesScrollView = UIScrollView()
+        sourcesScrollView.showsHorizontalScrollIndicator = false
+        
+        if self.sourcesStackView.arrangedSubviews.count > 1 {
+            sourcesStackView.translatesAutoresizingMaskIntoConstraints = false
+            
+            sourcesScrollView.addSubview(self.sourcesStackView)
+        }
+        
+        let stackView = UIStackView(arrangedSubviews: [imageView, titleLabel, articleLabel, sourcesScrollView, tagScrollView])
         stackView.translatesAutoresizingMaskIntoConstraints = false
         stackView.axis = .vertical
         stackView.alignment = .leading
         stackView.spacing = 35
         
-        NSLayoutConstraint.activate([tagScrollView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
-                                     tagScrollView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
-                                     tagScrollView.heightAnchor.constraint(equalTo: sourcesStackView.heightAnchor)])
+        if self.sourcesStackView.arrangedSubviews.count > 1 {
+            NSLayoutConstraint.activate([sourcesStackView.topAnchor.constraint(equalTo: sourcesScrollView.topAnchor),
+                                         sourcesStackView.leadingAnchor.constraint(equalTo: sourcesScrollView.leadingAnchor),
+                                         sourcesStackView.trailingAnchor.constraint(equalTo: sourcesScrollView.trailingAnchor),
+                                         sourcesStackView.bottomAnchor.constraint(equalTo: sourcesScrollView.bottomAnchor)])
+            
+            NSLayoutConstraint.activate([sourcesScrollView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+                                         sourcesScrollView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+                                         sourcesScrollView.heightAnchor.constraint(equalTo: sourcesStackView.heightAnchor)])
+        }
+        
+        if tagsStackView.arrangedSubviews.count > 1 {
+            NSLayoutConstraint.activate([tagsStackView.topAnchor.constraint(equalTo: tagScrollView.topAnchor),
+                                         tagsStackView.leadingAnchor.constraint(equalTo: tagScrollView.leadingAnchor),
+                                         tagsStackView.trailingAnchor.constraint(equalTo: tagScrollView.trailingAnchor),
+                                         tagsStackView.bottomAnchor.constraint(equalTo: tagScrollView.bottomAnchor)])
+            
+            NSLayoutConstraint.activate([tagScrollView.leadingAnchor.constraint(equalTo: stackView.leadingAnchor),
+                                         tagScrollView.trailingAnchor.constraint(equalTo: stackView.trailingAnchor),
+                                         tagScrollView.heightAnchor.constraint(equalTo: tagsStackView.heightAnchor)])
+        }
         
         return stackView
     }()
@@ -148,7 +177,7 @@ class ArticleViewController: UIViewController {
     private lazy var sourcesStackView: UIStackView = {
         var sourceViews: [UIView] = [SourceView(title: "Sources:", url: nil, isTitle: true)]
         for (index, ref) in self.article.refs.enumerated() {
-            let sourceView: SourceView = SourceView(title: "\(index)", url: ref, isTitle: false)
+            let sourceView: SourceView = SourceView(title: "\(index + 1)", url: ref, isTitle: false)
             let tapGesture = UITapGestureRecognizer(target: self, action: #selector(sourceButtonPressed(sender:)))
             sourceView.addGestureRecognizer(tapGesture)
             sourceViews.append(sourceView)

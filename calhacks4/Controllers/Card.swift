@@ -61,7 +61,7 @@ class Card: UIView {
     private lazy var subtitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.text = ""
+        label.text = self.article.source ?? ""
         label.font = Font.cardSubtitle
         label.textColor = .black
         

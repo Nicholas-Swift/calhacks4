@@ -57,6 +57,7 @@ class SummaryViewController: UIViewController {
     }
     
     func setupViews() {
+        self.navigationItem.title = ""
         self.navigationItem.largeTitleDisplayMode = .never
         self.view.backgroundColor = .white
         
@@ -131,7 +132,7 @@ class SummaryViewController: UIViewController {
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = Font.title
+        label.font = Font.summaryTitle
         label.textColor = .black
         label.numberOfLines = 0
         label.text = self.topic.title
@@ -143,7 +144,11 @@ class SummaryViewController: UIViewController {
         let label = UILabel()
         label.textColor = .black
         label.numberOfLines = 0
-        label.text = self.topic.summary
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineSpacing = 5
+        paragraphStyle.paragraphSpacing = 5
+        label.attributedText = NSAttributedString(string: self.topic.summary, attributes: [NSAttributedStringKey.paragraphStyle: paragraphStyle])
         
         return label
     }()
