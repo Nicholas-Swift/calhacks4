@@ -11,7 +11,6 @@ import UIKit
 
 class SummaryViewController: UIViewController {
     
-    
     init(topic: Topic) {
         self.topic = topic
         self.viewModel = SummaryViewModel(id: topic.id)
@@ -113,7 +112,7 @@ class SummaryViewController: UIViewController {
     private let viewModel: SummaryViewModel
     
     private let topic: Topic
-    
+
     private var scrollViewContentView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false

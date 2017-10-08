@@ -40,7 +40,7 @@ class ArticleViewController: UIViewController {
         
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = 5
-        paragraphStyle.paragraphSpacing = 20
+        paragraphStyle.paragraphSpacing = 5
         articleLabel.attributedText = NSAttributedString(string: article.text, attributes: [NSAttributedStringKey.paragraphStyle: paragraphStyle])
         imageView.af_setImage(withURL: article.imageURL)
         
